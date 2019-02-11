@@ -11,7 +11,7 @@ const mstp = state => {
 
 const mdtp = dispatch => {
   return ({
-    fetchAllPokemon: () => fetchAllPokemon()
+    fetchAllPokemon: () => dispatch(fetchAllPokemon())
   });
 };
 

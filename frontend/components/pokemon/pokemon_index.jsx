@@ -5,9 +5,22 @@ class PokemonIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchAllPokemon();
+  }
+
   render(){
     return (
-      <div></div>
+      <div>
+        <ul>
+          {this.props.pokemon.map(poke => {
+            return <li>
+              <img src={poke.image_url} alt=""/>
+              <span>{poke.name}</span>
+            </li>
+          })}
+        </ul>
+      </div>
     );
   }
 };
