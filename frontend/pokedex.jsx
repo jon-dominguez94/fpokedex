@@ -7,7 +7,7 @@ import * as APIUtil from './util/api_util';
 import * as actions from './actions/pokemon_actions';
 import { selectAllPokemon } from './reducers/selectors';
 
-window.requestAllPokemon = actions.fetchAllPokemon;
+window.requestPokemon = actions.fetchPokemon;
 window.selectAllPokemon = selectAllPokemon;
 
 document.addEventListener("DOMContentLoaded", () => {
