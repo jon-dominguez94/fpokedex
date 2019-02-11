@@ -177,6 +177,21 @@ function (_React$Component) {
   }
 
   _createClass(PokemonDetail, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var pokeId = this.props.match.params.pokemonId;
+      this.props.fetchPokemon(pokeId);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var pokeId = this.props.match.params.pokemonId;
+
+      if (prevProps.match.params.pokemonId !== pokeId) {
+        this.props.fetchPokemon(pokeId);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
@@ -517,7 +532,7 @@ var PokemonReducer = function PokemonReducer() {
 
   switch (action.type) {
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_POKEMON"]:
-      return action.pokemon;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.pokemon);
 
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POKEMON"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.pokeData.pokemon.id, action.pokeData.pokemon));
