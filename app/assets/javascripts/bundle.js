@@ -270,7 +270,8 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.pokemon.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Type: ", this.props.pokemon.poke_type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Attack: ", this.props.pokemon.attack), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Defense: ", this.props.pokemon.defense), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Moves: ", this.renderMoves()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "items"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Items"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "flex-center"
+        className: "flex-center",
+        id: "items-wrapper"
       }, this.renderItems())));
     }
   }]);

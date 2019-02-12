@@ -52,7 +52,7 @@ class PokemonDetail extends React.Component {
         {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
         <div id="items">
           <h1>Items</h1>
-          <div className="flex-center">
+          <div className="flex-center" id="items-wrapper">
             {this.renderItems()}
           </div>
         </div>

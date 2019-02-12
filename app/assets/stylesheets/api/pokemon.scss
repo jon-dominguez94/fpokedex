@@ -41,8 +41,6 @@ hr {
     width: 90%;
     margin: 30px 20px;
     background: linear-gradient(135deg, yellow, rgb(255, 94, 0));
-    border: 3px solid black;
-    border-radius: 5px;
 
     img {
       height: 380px;
@@ -67,11 +65,23 @@ hr {
 
 #items {
   background: white;
+  margin: 20px 0;
 
   h1 {
     text-align: center;
+    font-size: 24px;
   }
-  img {
-    height: 155px;
+
+  #items-wrapper {
+    margin: 10px;
+
+    img {
+      height: 155px;
+    }
   }
+}
+
+.poke-img, #items, #items-wrapper {
+  border: 3px solid black;
+  border-radius: 5px;
 }
