@@ -183,7 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ItemDetail = function ItemDetail(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.item.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.item.happiness));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Price: ", props.item.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Happiness: ", props.item.happiness));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ItemDetail);
