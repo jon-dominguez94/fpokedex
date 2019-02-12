@@ -25,7 +25,8 @@ class PokemonForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    alert('submit');
+    this.props.createPokemon({ pokemon: this.state })
+    .then(data => this.props.history.push(`/pokemon/${data.pokeData.pokemon.id}`));
   }
 
   render(){
@@ -34,7 +35,7 @@ class PokemonForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" value={this.state.name} onChange={this.update('name')}/>
           <input type="text" placeholder="Image Url" value={this.state.image_url} onChange={this.update('image_url')}/>
-          <select name="" id="">
+          <select name="" id="" onChange={this.update('poke_type')}>
             {window.POKEMON_TYPES.map(type => 
               <option key={type} value={type}>{type}</option>
             )}

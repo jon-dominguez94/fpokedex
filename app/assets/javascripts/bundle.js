@@ -478,8 +478,14 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      alert('submit');
+      this.props.createPokemon({
+        pokemon: this.state
+      }).then(function (data) {
+        return _this3.props.history.push("/pokemon/".concat(data.pokeData.pokemon.id));
+      });
     }
   }, {
     key: "render",
@@ -498,7 +504,8 @@ function (_React$Component) {
         onChange: this.update('image_url')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         name: "",
-        id: ""
+        id: "",
+        onChange: this.update('poke_type')
       }, window.POKEMON_TYPES.map(function (type) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           key: type,
