@@ -50,7 +50,12 @@ class PokemonDetail extends React.Component {
         <h2>Defense: {this.props.pokemon.defense}</h2>
         <h2>Moves: {this.renderMoves()}</h2>
         {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
-        {this.renderItems()}
+        <div id="items">
+          <h1>Items</h1>
+          <div className="flex-center">
+            {this.renderItems()}
+          </div>
+        </div>
       </section>
     );
   }
