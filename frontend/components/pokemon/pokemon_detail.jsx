@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
+import ItemDetailContainer from '../items/item_detail_container';
 
 class PokemonDetail extends React.Component {
   constructor(props){
@@ -62,6 +63,7 @@ class PokemonDetail extends React.Component {
           <h1>Items</h1>
           <div className="flex-center" id="items-wrapper">
             {this.renderItems()}
+            <Route path="pokemon/:pokemonId/item/:itemId" component={ ItemDetailContainer } />
           </div>
         </div>
       </section>
