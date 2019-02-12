@@ -10,12 +10,14 @@ class PokemonDetail extends React.Component {
   }
 
   componentDidMount(){
+    window.scrollTo(0, 0);
     const pokeId = this.props.match.params.pokemonId;
     this.props.fetchPokemon(pokeId);
   }
 
 
   componentDidUpdate(prevProps) {
+    window.scrollTo(0, 0);
     const pokeId = this.props.match.params.pokemonId;
     if (prevProps.match.params.pokemonId !== pokeId){
       this.props.fetchPokemon(pokeId);

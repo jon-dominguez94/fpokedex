@@ -290,12 +290,14 @@ function (_React$Component) {
   _createClass(PokemonDetail, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       var pokeId = this.props.match.params.pokemonId;
       this.props.fetchPokemon(pokeId);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
+      window.scrollTo(0, 0);
       var pokeId = this.props.match.params.pokemonId;
 
       if (prevProps.match.params.pokemonId !== pokeId) {
