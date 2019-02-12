@@ -183,6 +183,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ItemDetail = function ItemDetail(props) {
+  if (!props.item) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Happiness: ", props.item.happiness), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Price: $", props.item.price));
 };
 
@@ -584,6 +588,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.requestPokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_5__["fetchPokemon"];
 window.selectAllPokemon = _reducers_selectors__WEBPACK_IMPORTED_MODULE_6__["selectAllPokemon"];
+window.createPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["createPokemon"];
 document.addEventListener("DOMContentLoaded", function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   window.getState = store.getState;
@@ -764,13 +769,14 @@ var configureStore = function configureStore() {
 /*!***********************************!*\
   !*** ./frontend/util/api_util.js ***!
   \***********************************/
-/*! exports provided: fetchAllPokemon, fetchPokemon */
+/*! exports provided: fetchAllPokemon, fetchPokemon, createPokemon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllPokemon", function() { return fetchAllPokemon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPokemon", function() { return fetchPokemon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPokemon", function() { return createPokemon; });
 var fetchAllPokemon = function fetchAllPokemon() {
   return $.ajax({
     method: 'get',
@@ -781,6 +787,13 @@ var fetchPokemon = function fetchPokemon(id) {
   return $.ajax({
     method: 'get',
     url: "/api/pokemon/".concat(id)
+  });
+};
+var createPokemon = function createPokemon(data) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/pokemon',
+    data: data
   });
 };
 

@@ -1,6 +1,9 @@
 import React from 'react';
 
 const ItemDetail = props => {
+  if(!props.item){
+    return <div></div>
+  }
   return (
     <section>
       <h1>{props.item.name}</h1>

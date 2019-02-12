@@ -9,6 +9,7 @@ import { selectAllPokemon } from './reducers/selectors';
 
 window.requestPokemon = actions.fetchPokemon;
 window.selectAllPokemon = selectAllPokemon;
+window.createPokemon = APIUtil.createPokemon;
 
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
