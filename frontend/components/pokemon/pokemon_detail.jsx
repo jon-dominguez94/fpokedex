@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom';
 
 class PokemonDetail extends React.Component {
   constructor(props){
@@ -22,7 +23,14 @@ class PokemonDetail extends React.Component {
 
   renderItems(){
     return this.props.items.map(item => {
-      return <img key={item.id} src={item.image_url} alt=""/>
+      const pokeId = this.props.match.params.pokemonId;
+      return (
+        <Link key={item.id} to={`/pokemon/${pokeId}/item/${item.id}`}>
+          <div className="item-box">
+            <img src={item.image_url} alt=""/>
+          </div>
+        </Link>
+      );
     });
   }
 
@@ -50,7 +58,6 @@ class PokemonDetail extends React.Component {
         <h2>Attack: {this.props.pokemon.attack}</h2>
         <h2>Defense: {this.props.pokemon.defense}</h2>
         <h2>Moves: {this.renderMoves()}</h2>
-        {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
         <div id="items">
           <h1>Items</h1>
           <div className="flex-center" id="items-wrapper">

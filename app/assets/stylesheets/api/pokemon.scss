@@ -76,9 +76,17 @@ hr {
     margin: 10px;
     padding: 20px;
 
-    img {
-      height: 155px;
+    .item-box {
+      padding: 5px;
+      img {
+        height: 155px;
+      }
     }
+
+    .item-box:hover {
+      box-shadow: 5px 10px 18px #888888;
+    }
+
   }
 }
 
