@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const PokemonIndexItem = props => (
-  <li>
-    <Link to={`/pokemon/${props.poke.id}`}>
+  <li className="index-item">{props.poke.id}
+    <NavLink to={`/pokemon/${props.poke.id}`}>
       <img src={props.poke.image_url} alt="" />
+    </NavLink>
+    <NavLink to={`/pokemon/${props.poke.id}`}>
       <span>{props.poke.name}</span>
-    </Link>
+    </NavLink>
   </li>
 );
 

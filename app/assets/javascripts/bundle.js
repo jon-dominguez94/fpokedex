@@ -358,10 +358,11 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.pokemon.map(function (poke) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: poke.id,
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: poke.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           poke: poke
-        });
+        }));
       })));
     }
   }]);
@@ -426,12 +427,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var PokemonIndexItem = function PokemonIndexItem(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "index-item"
+  }, props.poke.id, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     to: "/pokemon/".concat(props.poke.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.poke.image_url,
     alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.poke.name)));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    to: "/pokemon/".concat(props.poke.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.poke.name)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PokemonIndexItem);
