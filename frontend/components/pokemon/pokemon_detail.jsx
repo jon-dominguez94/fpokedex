@@ -63,8 +63,8 @@ class PokemonDetail extends React.Component {
           <h1>Items</h1>
           <div className="flex-center" id="items-wrapper">
             {this.renderItems()}
-            <Route path="pokemon/:pokemonId/item/:itemId" component={ ItemDetailContainer } />
           </div>
+          <Route path="/pokemon/:pokemonId/item/:itemId" component={ ItemDetailContainer } />
         </div>
       </section>
     );

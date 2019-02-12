@@ -1,15 +1,13 @@
 import React from 'react';
 
-class ItemDetail extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return (
-      <div></div>
-    );
-  }
+const ItemDetail = props => {
+  return (
+    <section>
+      <p>{props.item.name}</p>
+      <p>{props.item.price}</p>
+      <p>{props.item.happiness}</p>
+    </section>
+  );
 }
 
 export default ItemDetail;
