@@ -457,6 +457,7 @@ function (_React$Component) {
       attack: '',
       defense: '',
       poke_type: '',
+      moves: [],
       move1: '',
       move2: '',
       image_url: ''
@@ -481,10 +482,17 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      this.props.createPokemon({
-        pokemon: this.state
-      }).then(function (data) {
-        return _this3.props.history.push("/pokemon/".concat(data.pokeData.pokemon.id));
+      var moves = [];
+      if (this.state.move1) moves.push(this.state.move1);
+      if (this.state.move2) moves.push(this.state.move2);
+      this.setState({
+        moves: moves
+      }, function () {
+        _this3.props.createPokemon({
+          pokemon: _this3.state
+        }).then(function (data) {
+          return _this3.props.history.push("/pokemon/".concat(data.pokeData.pokemon.id));
+        });
       });
     }
   }, {
@@ -505,8 +513,11 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         name: "",
         id: "",
+        value: this.state.poke_type,
         onChange: this.update('poke_type')
-      }, window.POKEMON_TYPES.map(function (type) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Select a Type"), window.POKEMON_TYPES.map(function (type) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           key: type,
           value: type
