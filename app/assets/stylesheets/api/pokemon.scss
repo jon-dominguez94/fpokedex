@@ -5,6 +5,7 @@
 .flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .page {
@@ -29,6 +30,7 @@ hr {
 }
 
 #detail {
+  flex-direction: column;
   background: grey;
   color: black;
   border: 5px solid black;
@@ -37,5 +39,14 @@ hr {
 }
 
 .poke-img {
-  background: orange;
+  width: 90%;
+  margin: 30px 20px;
+   background: linear-gradient(135deg, yellow, rgb(255, 94, 0));
+  border: 3px solid black;
+  border-radius: 5px;
+
+  img {
+    height: 380px;
+    margin: 20px;
+  }
 }

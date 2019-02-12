@@ -32,7 +32,7 @@ class PokemonDetail extends React.Component {
       return <div></div>;
     }
     return (
-      <section id="detail">
+      <section className="flex-center" id="detail">
         <div className="flex-center poke-img">
           <img src={this.props.pokemon.image_url} alt=""/>
         </div>
