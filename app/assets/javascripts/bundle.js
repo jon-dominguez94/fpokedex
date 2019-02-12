@@ -155,13 +155,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -171,9 +171,13 @@ function (_React$Component) {
   _inherits(PokemonDetail, _React$Component);
 
   function PokemonDetail(props) {
+    var _this;
+
     _classCallCheck(this, PokemonDetail);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PokemonDetail).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PokemonDetail).call(this, props));
+    _this.renderItems = _this.renderItems.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
   _createClass(PokemonDetail, [{
@@ -192,9 +196,22 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "renderItems",
+    value: function renderItems() {// this.props.pokemon.item_ids.map(id => {
+      //   return <img src={} alt=""/>
+      // })
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      if (this.props.pokemon === undefined) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.pokemon.image_url,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.pokemon.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Type: ", this.props.pokemon.poke_type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Attack: ", this.props.pokemon.attack), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Defense: ", this.props.pokemon.defense), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Moves: ", this.props.pokemon.moves), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Items: ", this.props.pokemon.item_ids));
     }
   }]);
 
@@ -216,15 +233,20 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/pokemon_actions */ "./frontend/actions/pokemon_actions.js");
-/* harmony import */ var _pokemon_detail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pokemon_detail */ "./frontend/components/pokemon/pokemon_detail.jsx");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+/* harmony import */ var _pokemon_detail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pokemon_detail */ "./frontend/components/pokemon/pokemon_detail.jsx");
+
 
 
 
 
 var mstp = function mstp(state, ownProps) {
   var pokeId = ownProps.match.params.pokemonId;
+  var pokemon = state.entities.pokemon[pokeId];
+  var items = pokemon ? Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_2__["getItems"])(state, pokemon.item_ids) : [];
   return {
-    pokemon: state.entities.pokemon[pokeId]
+    pokemon: pokemon,
+    items: items
   };
 };
 
@@ -236,7 +258,7 @@ var mdtp = function mdtp(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_pokemon_detail__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_pokemon_detail__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -571,14 +593,20 @@ var RootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
   \****************************************/
-/*! exports provided: selectAllPokemon */
+/*! exports provided: selectAllPokemon, getItems */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllPokemon", function() { return selectAllPokemon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getItems", function() { return getItems; });
 var selectAllPokemon = function selectAllPokemon(state) {
   return Object.values(state.entities.pokemon);
+};
+var getItems = function getItems(state, ids) {
+  return ids ? ids.map(function (id) {
+    return state.entities.items[id];
+  }) : [];
 };
 
 /***/ }),

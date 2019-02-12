@@ -3,6 +3,8 @@ import React from 'react';
 class PokemonDetail extends React.Component {
   constructor(props){
     super(props);
+
+    this.renderItems = this.renderItems.bind(this);
   }
 
   componentDidMount(){
@@ -18,10 +20,28 @@ class PokemonDetail extends React.Component {
     }
   }
 
+  renderItems(){
+    // this.props.pokemon.item_ids.map(id => {
+    //   return <img src={} alt=""/>
+    // })
+  }
+
 
   render() {
+    if(this.props.pokemon === undefined){
+      return <div></div>;
+    }
     return (
-      <div></div>
+      <div>
+        <img src={this.props.pokemon.image_url} alt=""/>
+        <p>{this.props.pokemon.name}</p>
+        <p>Type: {this.props.pokemon.poke_type}</p>
+        <p>Attack: {this.props.pokemon.attack}</p>
+        <p>Defense: {this.props.pokemon.defense}</p>
+        <p>Moves: {this.props.pokemon.moves}</p>
+        <p>Items: {this.props.pokemon.item_ids}</p>
+        {/* {this.renderItems()} */}
+      </div>
     );
   }
 }
