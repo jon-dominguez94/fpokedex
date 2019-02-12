@@ -6,10 +6,10 @@ import PokemonDetailContainer from './pokemon/pokemon_detail_container';
 
 const App = () => (
   <div className="page">
-    <section id="index">
+    <section>
       <Route path="/" component={PokemonIndexContainer} />
     </section>
-    <section id="info">
+    <section>
       <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
     </section>
   </div>

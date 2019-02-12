@@ -32,8 +32,10 @@ class PokemonDetail extends React.Component {
       return <div></div>;
     }
     return (
-      <div>
-        <img src={this.props.pokemon.image_url} alt=""/>
+      <section id="detail">
+        <div className="flex-center poke-img">
+          <img src={this.props.pokemon.image_url} alt=""/>
+        </div>
         <p>{this.props.pokemon.name}</p>
         <p>Type: {this.props.pokemon.poke_type}</p>
         <p>Attack: {this.props.pokemon.attack}</p>
@@ -41,7 +43,7 @@ class PokemonDetail extends React.Component {
         <p>Moves: {this.props.pokemon.moves}</p>
         {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
         {this.renderItems()}
-      </div>
+      </section>
     );
   }
 }

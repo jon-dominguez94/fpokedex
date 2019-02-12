@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.page {
+.flex-center {
   display: flex;
+  justify-content: center;
 }
 
-#index {
-  width: 300px;
+.page {
+  display: grid;
+  grid-template-columns: 300px 1fr;
 }
 
 .index-item {
@@ -20,10 +22,20 @@
     height: 20px;
     margin: 0 10px;
   }
-
 }
 
 hr {
-  // width: 100%;
   margin: 5px 0;
+}
+
+#detail {
+  background: grey;
+  color: black;
+  border: 5px solid black;
+  border-radius: 20px;
+  margin: 10px 30px;
+}
+
+.poke-img {
+  background: orange;
 }
