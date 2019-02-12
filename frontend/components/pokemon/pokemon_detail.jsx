@@ -22,12 +22,13 @@ class PokemonDetail extends React.Component {
 
   renderItems(){
     return this.props.items.map(item => {
-      return <img src={item.image_url} alt=""/>
-    })
+      return <img key={item.id} src={item.image_url} alt=""/>
+    });
   }
 
   renderMoves(){
-    let result = ""
+    let result = "";
+    if(!this.props.pokemon.moves) return "";
     for(let i = 0; i < this.props.pokemon.moves.length; i++){
       result += this.props.pokemon.moves[i];
       if (i !== this.props.pokemon.moves.length - 1) result += ', ';

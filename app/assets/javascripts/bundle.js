@@ -235,6 +235,7 @@ function (_React$Component) {
     value: function renderItems() {
       return this.props.items.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          key: item.id,
           src: item.image_url,
           alt: ""
         });
@@ -244,6 +245,7 @@ function (_React$Component) {
     key: "renderMoves",
     value: function renderMoves() {
       var result = "";
+      if (!this.props.pokemon.moves) return "";
 
       for (var i = 0; i < this.props.pokemon.moves.length; i++) {
         result += this.props.pokemon.moves[i];
