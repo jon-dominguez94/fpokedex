@@ -26,6 +26,14 @@ class PokemonDetail extends React.Component {
     })
   }
 
+  renderMoves(){
+    let result = ""
+    for(let i = 0; i < this.props.pokemon.moves.length; i++){
+      result += this.props.pokemon.moves[i];
+      if (i !== this.props.pokemon.moves.length - 1) result += ', ';
+    }
+    return result;
+  }
 
   render() {
     if(this.props.pokemon === undefined){
@@ -36,11 +44,11 @@ class PokemonDetail extends React.Component {
         <div className="flex-center poke-img">
           <img src={this.props.pokemon.image_url} alt=""/>
         </div>
-        <p>{this.props.pokemon.name}</p>
-        <p>Type: {this.props.pokemon.poke_type}</p>
-        <p>Attack: {this.props.pokemon.attack}</p>
-        <p>Defense: {this.props.pokemon.defense}</p>
-        <p>Moves: {this.props.pokemon.moves}</p>
+        <h1>{this.props.pokemon.name}</h1>
+        <h2>Type: {this.props.pokemon.poke_type}</h2>
+        <h2>Attack: {this.props.pokemon.attack}</h2>
+        <h2>Defense: {this.props.pokemon.defense}</h2>
+        <h2>Moves: {this.renderMoves()}</h2>
         {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
         {this.renderItems()}
       </section>
