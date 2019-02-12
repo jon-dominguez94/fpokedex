@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PokemonIndexContainer from './pokemon/pokemon_index_container';
 import PokemonDetailContainer from './pokemon/pokemon_detail_container';
+import PokemonFormContainer from './pokemon/pokemon_form_container';
 
 
 const App = () => (
@@ -10,7 +11,10 @@ const App = () => (
       <Route path="/" component={PokemonIndexContainer} />
     </section>
     <section>
-      <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
+      <Switch>
+        <Route exact path="/" component={PokemonFormContainer} />
+        <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
+      </Switch>
     </section>
   </div>
 );

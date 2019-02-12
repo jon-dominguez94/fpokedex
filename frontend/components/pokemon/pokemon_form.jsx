@@ -13,12 +13,12 @@ class PokemonForm extends React.Component {
       move2: '',
       image_url: ''
     };
-    
+
   }
 
   render(){
     return(
-      <div></div>
+      <div>form</div>
     );
   }
 }
