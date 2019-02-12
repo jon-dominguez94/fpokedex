@@ -21,9 +21,9 @@ class PokemonDetail extends React.Component {
   }
 
   renderItems(){
-    // this.props.pokemon.item_ids.map(id => {
-    //   return <img src={} alt=""/>
-    // })
+    return this.props.items.map(item => {
+      return <img src={item.image_url} alt=""/>
+    })
   }
 
 
@@ -39,8 +39,8 @@ class PokemonDetail extends React.Component {
         <p>Attack: {this.props.pokemon.attack}</p>
         <p>Defense: {this.props.pokemon.defense}</p>
         <p>Moves: {this.props.pokemon.moves}</p>
-        <p>Items: {this.props.pokemon.item_ids}</p>
-        {/* {this.renderItems()} */}
+        {/* <p>Items: {this.props.pokemon.item_ids}</p> */}
+        {this.renderItems()}
       </div>
     );
   }
