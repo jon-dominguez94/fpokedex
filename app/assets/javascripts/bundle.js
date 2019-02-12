@@ -478,6 +478,18 @@ function (_React$Component) {
         value: this.state.name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        placeholder: "Image Url",
+        value: this.state.image_url
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "",
+        id: ""
+      }, window.POKEMON_TYPES.map(function (type) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: type,
+          value: type
+        }, type);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
         placeholder: "Attack",
         value: this.state.attack
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -492,10 +504,6 @@ function (_React$Component) {
         type: "text",
         placeholder: "Move 2",
         value: this.state.move2
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Image Url",
-        value: this.state.image_url
       })));
     }
   }]);
