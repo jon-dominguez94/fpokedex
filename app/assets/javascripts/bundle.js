@@ -296,10 +296,10 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      window.scrollTo(0, 0);
       var pokeId = this.props.match.params.pokemonId;
 
       if (prevProps.match.params.pokemonId !== pokeId) {
+        window.scrollTo(0, 0);
         this.props.fetchPokemon(pokeId);
       }
     }
