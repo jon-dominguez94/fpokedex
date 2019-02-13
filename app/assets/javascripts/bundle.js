@@ -342,8 +342,7 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "flex-center",
-        id: "detail"
+        className: "flex-center detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flex-center poke-img"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
