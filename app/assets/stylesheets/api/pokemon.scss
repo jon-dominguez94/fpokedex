@@ -67,6 +67,11 @@ hr {
     font-size: 18px;
     font-weight: 400;
   }
+
+  form {
+    background: white;
+    width: 75%
+  }
 }
 
 #items {
@@ -102,7 +107,11 @@ hr {
   border-radius: 5px;
 }
 
+#form-section {
+  justify-content: flex-start;
+}
+
 #poke-logo {
-  margin: 0;
+  margin: 30px;
   padding: 0;
 }
