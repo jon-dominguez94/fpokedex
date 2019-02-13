@@ -70,7 +70,26 @@ hr {
 
   form {
     background: white;
-    width: 75%
+    width: 75%;
+    padding: 20px;
+
+    input, select, button {
+      width: 90%;
+    }
+
+    input {
+      border: none;
+      outline: none;
+    }
+
+    select {
+      border: none;
+      background: white;
+    }
+
+    button {
+      text-align: center;
+    }
   }
 }
 
