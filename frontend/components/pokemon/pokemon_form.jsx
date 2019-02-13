@@ -38,7 +38,8 @@ class PokemonForm extends React.Component {
   render(){
     return(
       <section className="detail">
-        <form onSubmit={this.handleSubmit}>
+        <img id="poke-logo" src={window.pokeLogo} alt=""/>
+        <form className="flex-center column" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" value={this.state.name} onChange={this.update('name')}/>
           <input type="text" placeholder="Image Url" value={this.state.image_url} onChange={this.update('image_url')}/>
           <select name="" id="" value={this.state.poke_type} onChange={this.update('poke_type')}>
