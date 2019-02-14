@@ -517,7 +517,9 @@ function (_React$Component) {
         placeholder: "Image Url",
         value: this.state.image_url,
         onChange: this.update('image_url')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "select-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.poke_type,
         onChange: this.update('poke_type')
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -527,7 +529,7 @@ function (_React$Component) {
           key: type,
           value: type
         }, type);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Attack",
         value: this.state.attack,
