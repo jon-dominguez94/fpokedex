@@ -9,7 +9,8 @@ const mstp = (state, ownProps) => {
   const items = pokemon ? getItems(state, pokemon.item_ids) : [];
   return ({
     pokemon,
-    items
+    items,
+    loading: state.ui.loading
   });
 };
 

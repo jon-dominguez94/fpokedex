@@ -5,7 +5,8 @@ import PokemonIndex from './pokemon_index';
 
 const mstp = state => {
   return ({
-    pokemon: selectAllPokemon(state)
+    pokemon: selectAllPokemon(state),
+    loading: state.ui.loading
   });
 };
 

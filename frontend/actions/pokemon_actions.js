@@ -22,8 +22,11 @@ export const receivePokemon = pokeData => ({
 
 export const fetchPokemon = id => dispatch => {
   dispatch(setLoading());
-  return APIUtil.fetchPokemon(id)
-  .then(pokeData => dispatch(receivePokemon(pokeData)));
+  setTimeout(() => {
+   return APIUtil.fetchPokemon(id)
+  .then(pokeData => dispatch(receivePokemon(pokeData)))
+  }, 1000);
+
 };
 
 export const receiveAllPokemon = pokemon => ({

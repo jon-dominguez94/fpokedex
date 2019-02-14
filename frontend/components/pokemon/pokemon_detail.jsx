@@ -48,12 +48,15 @@ class PokemonDetail extends React.Component {
   }
 
   render() {
-    if(this.props.pokemon === undefined){
+    if(this.props.loading){
+      console.log('loading');
       return (
         <div id="loading-pokeball-container">
           <div id="loading-pokeball"></div>
         </div>
       );
+    } else if (this.props.pokemon === undefined){
+      return <div></div>;
     }
     return (
       <section className="flex-center detail">

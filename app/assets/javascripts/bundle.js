@@ -134,9 +134,11 @@ var receivePokemon = function receivePokemon(pokeData) {
 var fetchPokemon = function fetchPokemon(id) {
   return function (dispatch) {
     dispatch(setLoading());
-    return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPokemon"](id).then(function (pokeData) {
-      return dispatch(receivePokemon(pokeData));
-    });
+    setTimeout(function () {
+      return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPokemon"](id).then(function (pokeData) {
+        return dispatch(receivePokemon(pokeData));
+      });
+    }, 1000);
   };
 };
 var receiveAllPokemon = function receiveAllPokemon(pokemon) {
@@ -361,12 +363,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.props.pokemon === undefined) {
+      if (this.props.loading) {
+        console.log('loading');
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "loading-pokeball-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "loading-pokeball"
         }));
+      } else if (this.props.pokemon === undefined) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -419,7 +424,8 @@ var mstp = function mstp(state, ownProps) {
   var items = pokemon ? Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_2__["getItems"])(state, pokemon.item_ids) : [];
   return {
     pokemon: pokemon,
-    items: items
+    items: items,
+    loading: state.ui.loading
   };
 };
 
@@ -722,7 +728,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mstp = function mstp(state) {
   return {
-    pokemon: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_1__["selectAllPokemon"])(state)
+    pokemon: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_1__["selectAllPokemon"])(state),
+    loading: state.ui.loading
   };
 };
 
