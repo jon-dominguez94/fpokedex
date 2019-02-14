@@ -365,11 +365,13 @@ function (_React$Component) {
     value: function render() {
       if (this.props.loading) {
         console.log('loading');
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          className: "flex-center detail"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "loading-pokeball-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "loading-pokeball"
-        }));
+        })));
       } else if (this.props.pokemon === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }

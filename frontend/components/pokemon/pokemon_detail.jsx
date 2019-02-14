@@ -51,9 +51,11 @@ class PokemonDetail extends React.Component {
     if(this.props.loading){
       console.log('loading');
       return (
-        <div id="loading-pokeball-container">
-          <div id="loading-pokeball"></div>
-        </div>
+        <section className="flex-center detail">
+          <div id="loading-pokeball-container">
+            <div id="loading-pokeball"></div>
+          </div>
+        </section>
       );
     } else if (this.props.pokemon === undefined){
       return <div></div>;
