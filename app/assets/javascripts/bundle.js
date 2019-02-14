@@ -510,13 +510,15 @@ function (_React$Component) {
     key: "renderErrors",
     value: function renderErrors() {
       return this.props.errors.map(function (error) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, error);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: error
+        }, error);
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "flex-center column detail",
         id: "form-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

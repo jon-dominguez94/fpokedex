@@ -139,6 +139,14 @@ hr {
 
 #form-section {
   justify-content: flex-start;
+
+  ul {
+    padding: 20px;
+
+    li {
+      margin: 2px;
+    }
+  }
 }
 
 #poke-logo {

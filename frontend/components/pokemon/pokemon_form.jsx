@@ -38,13 +38,13 @@ class PokemonForm extends React.Component {
 
   renderErrors(){
     return this.props.errors.map(error =>
-      <li>{error}</li>  
+      <li key={error}>{error}</li>  
     );
   }
 
   render(){
     return(
-      <ul className="flex-center column detail" id="form-section"> 
+      <section className="flex-center column detail" id="form-section"> 
         <div >
           <img id="poke-logo" src={window.pokeLogo} alt=""/>
         </div>
@@ -75,7 +75,7 @@ class PokemonForm extends React.Component {
         <ul>
           {this.renderErrors()}
         </ul>
-      </ul>
+      </section>
     );
   }
 }
