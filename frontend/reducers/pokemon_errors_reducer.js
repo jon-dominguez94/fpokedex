@@ -7,7 +7,7 @@ const PokemonErrorsReducer = (state = _nullError, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_POKEMON_ERRORS:
-      return merge({}, state, action.errors);
+      return action.errors;
     case RECEIVE_ALL_POKEMON:
       return _nullError;
     case RECEIVE_POKEMON:

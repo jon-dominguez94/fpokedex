@@ -7,7 +7,7 @@
 *.db
 *.sqlite
 bundle.js
-bundle.map.js
+bundle.js.map
 
 /config/keys.js
 config/master.key
