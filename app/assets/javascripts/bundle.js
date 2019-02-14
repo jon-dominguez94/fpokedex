@@ -303,6 +303,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var pokeId = this.props.match.params.pokemonId;
       this.props.fetchPokemon(pokeId);
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentDidUpdate",
