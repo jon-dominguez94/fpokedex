@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/pokemon_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_ALL_POKEMON, RECEIVE_POKEMON, RECEIVE_POKEMON_ERRORS, receivePokemonErrors, receivePokemon, fetchPokemon, receiveAllPokemon, fetchAllPokemon, createPokemon */
+/*! exports provided: RECEIVE_ALL_POKEMON, RECEIVE_POKEMON, RECEIVE_POKEMON_ERRORS, LOADING_ALL_POKEMON, LOADING_POKEMON, receivePokemonErrors, receivePokemon, fetchPokemon, receiveAllPokemon, fetchAllPokemon, createPokemon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_POKEMON", function() { return RECEIVE_ALL_POKEMON; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POKEMON", function() { return RECEIVE_POKEMON; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POKEMON_ERRORS", function() { return RECEIVE_POKEMON_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING_ALL_POKEMON", function() { return LOADING_ALL_POKEMON; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING_POKEMON", function() { return LOADING_POKEMON; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePokemonErrors", function() { return receivePokemonErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePokemon", function() { return receivePokemon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPokemon", function() { return fetchPokemon; });
@@ -109,6 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON";
 var RECEIVE_POKEMON = "RECEIVE_POKEMON";
 var RECEIVE_POKEMON_ERRORS = "RECEIVE_POKEMON_ERRORS";
+var LOADING_ALL_POKEMON = "LOADING_ALL_POKEMON";
+var LOADING_POKEMON = "LOADING_POKEMON";
 var receivePokemonErrors = function receivePokemonErrors(errors) {
   return {
     type: RECEIVE_POKEMON_ERRORS,
@@ -350,7 +354,11 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (this.props.pokemon === undefined) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "loading-pokeball-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "loading-pokeball"
+        }));
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {

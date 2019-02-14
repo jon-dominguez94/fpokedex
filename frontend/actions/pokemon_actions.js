@@ -3,6 +3,8 @@ import * as APIUtil from '../util/api_util';
 export const RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON";
 export const RECEIVE_POKEMON = "RECEIVE_POKEMON";
 export const RECEIVE_POKEMON_ERRORS = "RECEIVE_POKEMON_ERRORS";
+export const LOADING_ALL_POKEMON = "LOADING_ALL_POKEMON";
+export const LOADING_POKEMON = "LOADING_POKEMON";
 
 export const receivePokemonErrors = errors => ({
   type: RECEIVE_POKEMON_ERRORS,
