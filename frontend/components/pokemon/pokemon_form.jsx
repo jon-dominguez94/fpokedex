@@ -43,6 +43,15 @@ class PokemonForm extends React.Component {
   }
 
   render(){
+    if (this.props.loading) {
+      return (
+        <section className="flex-center detail">
+          <div id="loading-pokeball-container">
+            <div id="loading-pokeball"></div>
+          </div>
+        </section>
+      );
+    }
     return(
       <section className="flex-center column detail" id="form-section"> 
         <div >

@@ -49,7 +49,6 @@ class PokemonDetail extends React.Component {
 
   render() {
     if(this.props.loading){
-      console.log('loading');
       return (
         <section className="flex-center detail">
           <div id="loading-pokeball-container">

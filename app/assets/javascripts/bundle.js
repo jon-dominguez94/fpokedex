@@ -366,7 +366,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (this.props.loading) {
-        console.log('loading');
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "flex-center detail"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -545,6 +544,16 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      if (this.props.loading) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          className: "flex-center detail"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "loading-pokeball-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "loading-pokeball"
+        })));
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "flex-center column detail",
         id: "form-section"
@@ -626,7 +635,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mstp = function mstp(state) {
   return {
-    errors: state.errors.pokemon
+    errors: state.errors.pokemon,
+    loading: state.ui.loading
   };
 };
 
