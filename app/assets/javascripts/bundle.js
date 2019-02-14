@@ -512,12 +512,12 @@ function (_React$Component) {
         placeholder: "Name",
         value: this.state.name,
         onChange: this.update('name')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Image Url",
         value: this.state.image_url,
         onChange: this.update('image_url')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "select-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.poke_type,
@@ -529,27 +529,27 @@ function (_React$Component) {
           key: type,
           value: type
         }, type);
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Attack",
         value: this.state.attack,
         onChange: this.update('attack')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Defense",
         value: this.state.defense,
         onChange: this.update('defense')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Move 1",
         value: this.state.move1,
         onChange: this.update('move1')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Move 2",
         value: this.state.move2,
         onChange: this.update('move2')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Create Pokemon")));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Create Pokemon")));
     }
   }]);
 

@@ -43,7 +43,9 @@ class PokemonForm extends React.Component {
         </div>
         <form className="flex-center column" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" value={this.state.name} onChange={this.update('name')}/>
+          <hr/>
           <input type="text" placeholder="Image Url" value={this.state.image_url} onChange={this.update('image_url')}/>
+          <hr />
           <div className="select-wrapper">
           <select value={this.state.poke_type} onChange={this.update('poke_type')}>
             <option value="">Select a Type</option>
@@ -52,10 +54,15 @@ class PokemonForm extends React.Component {
             )}
           </select>
           </div>
+          <hr />
           <input type="text" placeholder="Attack" value={this.state.attack} onChange={this.update('attack')}/>
+          <hr />
           <input type="text" placeholder="Defense" value={this.state.defense} onChange={this.update('defense')}/>
+          <hr />
           <input type="text" placeholder="Move 1" value={this.state.move1} onChange={this.update('move1')}/>
+          <hr />
           <input type="text" placeholder="Move 2" value={this.state.move2} onChange={this.update('move2')}/>
+          <hr />
           <button>Create Pokemon</button>
         </form>
       </section>
