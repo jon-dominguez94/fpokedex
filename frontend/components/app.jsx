@@ -7,7 +7,7 @@ import PokemonFormContainer from './pokemon/pokemon_form_container';
 
 const App = () => (
   <div className="page">
-    <section>
+    <section className="scroll">
       <Route path="/" component={PokemonIndexContainer} />
     </section>
     <section>

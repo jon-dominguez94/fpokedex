@@ -12,6 +12,11 @@
   flex-direction: column;
 }
 
+.scroll {
+  height: 100vh;
+  overflow: scroll;
+}
+
 .page {
   display: grid;
   grid-template-columns: 300px 1fr;
