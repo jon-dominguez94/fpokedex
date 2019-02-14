@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/pokemon_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_ALL_POKEMON, RECEIVE_POKEMON, RECEIVE_POKEMON_ERRORS, LOADING_ALL_POKEMON, LOADING_POKEMON, receivePokemonErrors, receivePokemon, fetchPokemon, receiveAllPokemon, fetchAllPokemon, createPokemon */
+/*! exports provided: RECEIVE_ALL_POKEMON, RECEIVE_POKEMON, RECEIVE_POKEMON_ERRORS, LOADING_ALL_POKEMON, LOADING_POKEMON, setLoading, receivePokemonErrors, receivePokemon, fetchPokemon, receiveAllPokemon, fetchAllPokemon, createPokemon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,6 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POKEMON_ERRORS", function() { return RECEIVE_POKEMON_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING_ALL_POKEMON", function() { return LOADING_ALL_POKEMON; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING_POKEMON", function() { return LOADING_POKEMON; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLoading", function() { return setLoading; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePokemonErrors", function() { return receivePokemonErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePokemon", function() { return receivePokemon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPokemon", function() { return fetchPokemon; });
@@ -113,6 +114,11 @@ var RECEIVE_POKEMON = "RECEIVE_POKEMON";
 var RECEIVE_POKEMON_ERRORS = "RECEIVE_POKEMON_ERRORS";
 var LOADING_ALL_POKEMON = "LOADING_ALL_POKEMON";
 var LOADING_POKEMON = "LOADING_POKEMON";
+var setLoading = function setLoading() {
+  return {
+    type: LOADING_POKEMON
+  };
+};
 var receivePokemonErrors = function receivePokemonErrors(errors) {
   return {
     type: RECEIVE_POKEMON_ERRORS,
@@ -127,6 +133,7 @@ var receivePokemon = function receivePokemon(pokeData) {
 };
 var fetchPokemon = function fetchPokemon(id) {
   return function (dispatch) {
+    dispatch(setLoading());
     return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPokemon"](id).then(function (pokeData) {
       return dispatch(receivePokemon(pokeData));
     });
@@ -140,6 +147,7 @@ var receiveAllPokemon = function receiveAllPokemon(pokemon) {
 };
 var fetchAllPokemon = function fetchAllPokemon() {
   return function (dispatch) {
+    dispatch(setLoading());
     return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllPokemon"]().then(function (pokemon) {
       return dispatch(receiveAllPokemon(pokemon));
     });
