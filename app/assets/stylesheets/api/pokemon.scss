@@ -73,10 +73,12 @@ hr {
     background: white;
     width: 75%;
     padding: 20px;
+    font-size: 16px;
 
     input, select, button, div {
       width: 90%;
       padding-top: 35px;
+      font-size: inherit;
     }
 
     input {
@@ -88,6 +90,7 @@ hr {
       border: none;
       background: white;
       outline: none;
+      width: 100%;
     }
 
     button {
