@@ -17,6 +17,7 @@ class PokemonForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
 
   }
 
@@ -35,9 +36,15 @@ class PokemonForm extends React.Component {
     });
   }
 
+  renderErrors(){
+    return this.props.errors.map(error =>
+      <li>{error}</li>  
+    );
+  }
+
   render(){
     return(
-      <section className="flex-center column detail" id="form-section"> 
+      <ul className="flex-center column detail" id="form-section"> 
         <div >
           <img id="poke-logo" src={window.pokeLogo} alt=""/>
         </div>
@@ -65,7 +72,10 @@ class PokemonForm extends React.Component {
           <hr />
           <button>Create Pokemon</button>
         </form>
-      </section>
+        <ul>
+          {this.renderErrors()}
+        </ul>
+      </ul>
     );
   }
 }

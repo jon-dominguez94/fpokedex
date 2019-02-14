@@ -474,6 +474,7 @@ function (_React$Component) {
     };
     _this.update = _this.update.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -506,9 +507,16 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return this.props.errors.map(function (error) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, error);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "flex-center column detail",
         id: "form-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -560,7 +568,7 @@ function (_React$Component) {
         placeholder: "Move 2",
         value: this.state.move2,
         onChange: this.update('move2')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Create Pokemon")));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Create Pokemon")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.renderErrors()));
     }
   }]);
 
