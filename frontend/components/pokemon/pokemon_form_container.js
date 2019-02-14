@@ -4,7 +4,7 @@ import PokemonForm from './pokemon_form';
 
 const mstp = state => {
   return ({
-
+    errors: state.errors.pokemon
   });
 };
 

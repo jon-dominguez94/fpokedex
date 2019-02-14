@@ -588,7 +588,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state) {
-  return {};
+  return {
+    errors: state.errors.pokemon
+  };
 };
 
 var mdtp = function mdtp(dispatch) {
