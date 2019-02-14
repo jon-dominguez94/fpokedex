@@ -44,7 +44,7 @@ class PokemonForm extends React.Component {
         <form className="flex-center column" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" value={this.state.name} onChange={this.update('name')}/>
           <input type="text" placeholder="Image Url" value={this.state.image_url} onChange={this.update('image_url')}/>
-          <select name="" id="" value={this.state.poke_type} onChange={this.update('poke_type')}>
+          <select value={this.state.poke_type} onChange={this.update('poke_type')}>
             <option value="">Select a Type</option>
             {window.POKEMON_TYPES.map(type => 
               <option key={type} value={type}>{type}</option>

@@ -518,8 +518,6 @@ function (_React$Component) {
         value: this.state.image_url,
         onChange: this.update('image_url')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        name: "",
-        id: "",
         value: this.state.poke_type,
         onChange: this.update('poke_type')
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
